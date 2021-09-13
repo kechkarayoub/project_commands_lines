@@ -1,0 +1,35 @@
+Install pip3:
+	sudo apt install python3-pip
+Install venv:
+	sudo apt-get install python3-venv
+	python3 -m venv djangoenv
+Activate venv:
+    source venv/bin/activate
+Install django:
+    pip3 install django
+Create project:
+    django-admin startproject health_kools
+Create app:
+    python manage.py startapp app_name
+Database setup:
+    Installation packages:
+        sudo apt install python3-dev libmysqlclient-dev default-libmysqlclient-dev
+        pip3 install pymysql
+        sudo pip3 install mysqlclient
+    Create database:
+        sudo mysql -u root
+        CREATE DATABASE database_name; # ex: health_kools
+        CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: health_kools_user, Password: password
+        FLUSH PRIVILEGES;
+        GRANT ALL ON database_name.* TO 'user'@'%';
+    Configuration file:
+        Create my.cnf file in health_kools/ with content:
+            [client]
+            database = database_name
+            host = localhost
+            user = user
+            password = password
+            default-character-set = utf8
+    Restart mysql:
+        sudo systemctl daemon-reload
+        sudo systemctl restart mysql
