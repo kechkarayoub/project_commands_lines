@@ -2,7 +2,7 @@ Install pip3:
 	sudo apt install python3-pip
 Install venv:
 	sudo apt-get install python3-venv
-	python3 -m venv djangoenv
+	python3 -m venv venv
 Activate venv:
     source venv/bin/activate
 Install django:
@@ -33,3 +33,5 @@ Database setup:
     Restart mysql:
         sudo systemctl daemon-reload
         sudo systemctl restart mysql
+Install djangorestframework:
+    pip3 install djangorestframework
