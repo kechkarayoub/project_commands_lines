@@ -1,0 +1,14 @@
+Add user and group:
+    sudo adduser <user_name>
+
+If project directory exists in another directory then:
+    Run those commands:
+        sudo chown <user_name>:<user_name> <user_name>
+        sudo usermod -d root/to/your/project <user_name>
+    Connect as root:
+        sudo su
+    Run this command:
+        echo "<user_name>    ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
+Add permission for log directory:
+    sudo chmod -R 777 /path/to/log/folder
