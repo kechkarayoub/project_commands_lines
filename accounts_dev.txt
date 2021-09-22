@@ -4,3 +4,4 @@ Django admin:
 Ubuntu user:
     Username: h_project
     Password: as normal :)
+https://api.rss2json.com api key is by account "edxkls2019@gmail.com."
