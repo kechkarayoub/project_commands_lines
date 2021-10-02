@@ -8,7 +8,7 @@ Activate venv:
 Install django:
     pip3 install django
 Create project:
-    django-admin startproject health_kools
+    django-admin startproject healthkools
 Create app:
     python manage.py startapp app_name
 Database setup:
@@ -23,7 +23,7 @@ Database setup:
         FLUSH PRIVILEGES;
         GRANT ALL ON database_name.* TO 'user'@'%';
     Configuration file:
-        Create my.cnf file in health_kools/ with content:
+        Create my.cnf file in healthkools/ with content:
             [client]
             database = database_name
             host = localhost
@@ -35,3 +35,4 @@ Database setup:
         sudo systemctl restart mysql
 Install djangorestframework:
     pip3 install djangorestframework
+Add local_settings.py file in healthkools/ with local settings
