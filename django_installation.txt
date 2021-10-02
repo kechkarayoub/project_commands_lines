@@ -35,4 +35,4 @@ Database setup:
         sudo systemctl restart mysql
 Install djangorestframework:
     pip3 install djangorestframework
-Add local_settings.py file in healthkools/ with local settings
+Add private.py file in healthkools/healthkools/ with local settings
