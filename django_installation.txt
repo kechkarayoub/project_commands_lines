@@ -35,4 +35,33 @@ Database setup:
         sudo systemctl restart mysql
 Install djangorestframework:
     pip3 install djangorestframework
+Install requests:
+    pip3 install requests
 Add private.py file in healthkools/healthkools/ with local settings
+Add setfeeds.sh script:
+    create a setfeeds_ar.sh file with this content:
+        #!/bin/bash
+        source /user/path/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l ar
+    create a setfeeds_en.sh file with this content:
+        #!/bin/bash
+        source /user/path/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l en
+    create a setfeeds_fr.sh file with this content:
+        #!/bin/bash
+        source /user/path/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l en
+    Make files executables:
+        chmod +x /path/to/setfeeds_ar.sh
+        chmod +x /path/to/setfeeds_en.sh
+        chmod +x /path/to/setfeeds_fr.sh
+    Add crontab:
+        crontab -e
+        Add those lines:
+            0 0 1 * * /path/to/setfeeds_ar.sh > /user/path/cronjob.log 2>&1
+            0 0 11 * * /path/to/setfeeds_en.sh > /user/path/cronjob.log 2>&1
+            0 0 21 * * /path/to/setfeeds_fr.sh > /user/path/cronjob.log 2>&1
+        Save file
