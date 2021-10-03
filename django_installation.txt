@@ -61,7 +61,7 @@ Add setfeeds.sh script:
     Add crontab:
         crontab -e
         Add those lines:
-            0 0 1 * * /path/to/setfeeds_ar.sh > /user/path/cronjob.log 2>&1
-            0 0 11 * * /path/to/setfeeds_en.sh > /user/path/cronjob.log 2>&1
-            0 0 21 * * /path/to/setfeeds_fr.sh > /user/path/cronjob.log 2>&1
+            0 0 * * MON /path/to/setfeeds_ar.sh > /user/path/cronjob.log 2>&1
+            0 0 * * WED /path/to/setfeeds_en.sh > /user/path/cronjob.log 2>&1
+            0 0 * * FRI /path/to/setfeeds_fr.sh > /user/path/cronjob.log 2>&1
         Save file
