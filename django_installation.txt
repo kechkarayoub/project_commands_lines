@@ -18,8 +18,8 @@ Database setup:
         sudo pip3 install mysqlclient
     Create database:
         sudo mysql -u root
-        CREATE DATABASE database_name; # ex: health_kools
-        CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: health_kools_user, Password: password
+        CREATE DATABASE database_name; # ex: healthkools
+        CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: healthkools_user, Password: password
         FLUSH PRIVILEGES;
         GRANT ALL ON database_name.* TO 'user'@'%';
     Configuration file:
