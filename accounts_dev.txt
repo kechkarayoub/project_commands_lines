@@ -1,5 +1,5 @@
 Django admin:
-    Username: health_kools_admin
+    Username: healthkools_admin
     Password: as normal :)
 Ubuntu user:
     Username: h_project
