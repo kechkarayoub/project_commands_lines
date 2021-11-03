@@ -37,7 +37,19 @@ Install djangorestframework:
     pip3 install djangorestframework
 Install requests:
     pip3 install requests
-Add private.py file in healthkools/healthkools/ with local settings
+Install django-after-response:
+    pip3 install django-after-response==0.2.2
+
+Add private.py file in healthkools/healthkools/ with local settings. ex:
+    RSS2JSON_API_KEY = '{RSS2JSON_API_KEY}'
+    LANGUAGES_DICT = {
+        "ar": _("Arabic"),
+        "en": _("English"),
+        "fr": _("French")
+    }
+    EMAIL_HOST_USER = '{EMAIL_HOST_USERNAME}'
+    EMAIL_HOST_PASSWORD = '{EMAIL_HOST_PASSWORD}'
+
 Add setfeeds.sh script:
     create a setfeeds_ar.sh file with this content:
         #!/bin/bash

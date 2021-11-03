@@ -6,3 +6,4 @@ Ubuntu user:
     Password: as normal :)
 https://api.rss2json.com api key is by account "edxkls2019@gmail.com"
 https://geolocation-db.com/ api key is by account "edxkls2019@gmail.com"
+https://www.sendgrid.com/ api key is by account "edxkls2019@gmail.com"
