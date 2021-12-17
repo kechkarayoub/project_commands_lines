@@ -1,0 +1,12 @@
+Init eslint:
+    yarn run eslint --init
+
+Run eslint:
+    yarn run eslint (file_name or directory)
+
+Init flow:
+    flow init
+    yarn run flow init
+
+Run flow:
+    yarn run flow

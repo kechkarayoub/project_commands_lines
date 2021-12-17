@@ -1,0 +1,5 @@
+Install expo:
+    npm install -g expo-cli
+
+Init app:
+    expo init name_of_app (ex: healthkools)
