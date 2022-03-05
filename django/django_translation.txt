@@ -1,3 +1,6 @@
+Install ugettext:
+    sudo apt install gettext
+
 For each app:
     Create locale folder inside it:
         mkdir locale

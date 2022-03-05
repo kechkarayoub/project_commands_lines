@@ -16,12 +16,14 @@ Database setup:
         sudo apt install python3-dev libmysqlclient-dev default-libmysqlclient-dev
         pip3 install pymysql
         sudo pip3 install mysqlclient
+        #sudo apt install mysql-client-core-8.0
+        apt-get -s install mariadb-server
     Create database:
         sudo mysql -u root
         CREATE DATABASE database_name; # ex: healthkools
-        CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: healthkools_user, Password: password
+        CREATE USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: healthkools_user, Password: password
         FLUSH PRIVILEGES;
-        GRANT ALL ON database_name.* TO 'user'@'%';
+        GRANT ALL ON database_name.* TO 'user'@'localhost';
     Configuration file:
         Create my.cnf file in healthkools/ with content:
             [client]
