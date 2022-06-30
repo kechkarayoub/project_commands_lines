@@ -43,6 +43,8 @@ Install django-after-response:
     pip3 install django-after-response==0.2.2
 Install yaml:
     pip3 install pyyaml
+Install html2text:
+    pip3 install html2text
 
 Add private.py file in healthkools/healthkools/ with local settings. ex:
     RSS2JSON_API_KEY = '{RSS2JSON_API_KEY}'
