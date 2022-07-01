@@ -61,19 +61,19 @@ Add private.py file in healthkools/healthkools/ with local settings. ex:
 Add setfeeds.sh script:
     create a setfeeds_ar.sh file with this content:
         #!/bin/bash
-        source /user/path/.bashrc
+        source ~/.bashrc
         source /venv/path/bin/activate
         python /project/manage.py setfeeds --l ar
     create a setfeeds_en.sh file with this content:
         #!/bin/bash
-        source /user/path/.bashrc
+        source ~/.bashrc
         source /venv/path/bin/activate
         python /project/manage.py setfeeds --l en
     create a setfeeds_fr.sh file with this content:
         #!/bin/bash
-        source /user/path/.bashrc
+        source ~/.bashrc
         source /venv/path/bin/activate
-        python /project/manage.py setfeeds --l en
+        python /project/manage.py setfeeds --l fr
     Make files executables:
         chmod +x /path/to/setfeeds_ar.sh
         chmod +x /path/to/setfeeds_en.sh
