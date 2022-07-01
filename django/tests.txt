@@ -1,0 +1,2 @@
+Tu run tests:
+    python manage test {app_name or nothing for all apps}
