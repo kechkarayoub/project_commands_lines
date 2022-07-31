@@ -53,10 +53,16 @@ Add private.py file in healthkools/healthkools/ with local settings. ex:
         "en": _("English"),
         "fr": _("French")
     }
-    EMAIL_HOST_USER = '{EMAIL_HOST_USERNAME}'
-    EMAIL_HOST_PASSWORD = '{EMAIL_HOST_PASSWORD}'
+    # sendgrid django setting
+    SENDGRID_API_KEY = '{send_grid_api_key}'
+    EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+    EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_FROM_ADDRESS = '{sender_address}'
     BACKEND_URL = "http://localhost:8000"
     FRONT_URL = "http://localhost:3000"
+
 
 Add setfeeds.sh script:
     create a setfeeds_ar.sh file with this content:
