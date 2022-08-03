@@ -45,6 +45,8 @@ Install yaml:
     pip3 install pyyaml
 Install html2text:
     pip3 install html2text
+Install django-cors-headers:
+    pip3 install django-cors-headers
 
 Add private.py file in healthkools/healthkools/ with local settings. ex:
     RSS2JSON_API_KEY = '{RSS2JSON_API_KEY}'
@@ -62,6 +64,10 @@ Add private.py file in healthkools/healthkools/ with local settings. ex:
     EMAIL_FROM_ADDRESS = '{sender_address}'
     BACKEND_URL = "http://localhost:8000"
     FRONT_URL = "http://localhost:3000"
+
+For local dev create a devstack.py file in healthkools/healthkools/ with development settings. ex:
+    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ORIGIN_WHITELIST = ["*"]
 
 
 Add setfeeds.sh script:
