@@ -1,3 +1,5 @@
+In package.json => jest => preset: "react-native" || "react-expo"
+
 Init eslint:
     yarn run eslint --init
 
