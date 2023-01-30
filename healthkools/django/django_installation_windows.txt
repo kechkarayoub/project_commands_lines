@@ -1,10 +1,10 @@
 Install pip3:
-	sudo apt install python3-pip
+	python -m pip3 install --upgrade pip
 Install venv:
-	sudo apt-get install python3-venv
+	pip3 install virtualenv
 	python3 -m venv venv
 Activate venv:
-    source venv/bin/activate
+    venv\Scripts\activate
 Install django:
     pip3 install django
 Create project:
@@ -13,13 +13,12 @@ Create app:
     python manage.py startapp app_name
 Database setup:
     Installation packages:
-        sudo apt install python3-dev libmysqlclient-dev default-libmysqlclient-dev
+        #sudo apt install python3-dev libmysqlclient-dev default-libmysqlclient-dev
         pip3 install pymysql
-        sudo pip3 install mysqlclient
+        pip3 install mysqlclient
         #sudo apt install mysql-client-core-8.0
-        apt-get -s install mariadb-server
+        #apt-get -s install mariadb-server
     Create database:
-        sudo mysql -u root
         CREATE DATABASE database_name; # ex: healthkools
         CREATE USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: healthkools_user, Password: password
         FLUSH PRIVILEGES;
@@ -33,8 +32,10 @@ Database setup:
             password = password
             default-character-set = utf8
     Restart mysql:
-        sudo systemctl daemon-reload
-        sudo systemctl restart mysql
+        windows key + R
+        services.msc
+        search mysql service
+        restart
 Install djangorestframework:
     pip3 install djangorestframework
 Install requests:
@@ -49,6 +50,7 @@ Install django-cors-headers:
     pip3 install django-cors-headers
 
 Add private.py file in healthkools/healthkools/ with local settings. ex:
+    from django.utils.translation import gettext_lazy as _
     RSS2JSON_API_KEY = '{RSS2JSON_API_KEY}'
     LANGUAGES_DICT = {
         "ar": _("Arabic"),

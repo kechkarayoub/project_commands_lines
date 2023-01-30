@@ -1,0 +1,11 @@
+Install ugettext:
+     pip3 install python-gettext
+
+For each app:
+    Create locale folder inside it:
+        mkdir locale
+    Create .po files:
+        For each language you want, run:
+            django-admin makemessages -l {language_code} # ex: fr, en, ar
+    Create .mo files by running:
+        django-admin compilemessages
