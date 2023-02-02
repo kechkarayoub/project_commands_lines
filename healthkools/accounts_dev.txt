@@ -1,9 +1,9 @@
 Django admin:
-    Username: healthkools_admin
-    Password: as normal :)
+    Username: admin
+    Password: admin
 Ubuntu user:
-    Username: h_project
-    Password: as normal :)
+    Username: healthkools_user
+    Password: password
 https://api.rss2json.com api key is by account "edxkls2019@gmail.com"
 https://geolocation-db.com/ api key is by account "edxkls2019@gmail.com"
 https://www.sendgrid.com/ api key is by account "edxkls2019@gmail.com"
