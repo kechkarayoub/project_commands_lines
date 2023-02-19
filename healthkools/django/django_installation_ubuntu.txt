@@ -39,6 +39,9 @@ Install djangorestframework:
     pip3 install djangorestframework
 Install requests:
     pip3 install requests
+Install django-colorfield:
+    pip3 install django-colorfield
+    (python manage.py collectstatic)
 Install django-after-response:
     pip3 install django-after-response==0.2.2
 Install yaml:
