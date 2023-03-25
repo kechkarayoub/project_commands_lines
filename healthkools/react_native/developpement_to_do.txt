@@ -1,2 +1,4 @@
+- Add CustomEditImage
+- Add CustomCropImage
 - Optimise image before sending to server.
 - Add google oauth registration
