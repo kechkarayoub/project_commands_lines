@@ -1,6 +1,8 @@
 Install ugettext:
      pip3 install python-gettext
 
+Gettext must be installed on windows. Use this link: https://mlocati.github.io/articles/gettext-iconv-windows.html
+
 For each app:
     Create locale folder inside it:
         mkdir locale
