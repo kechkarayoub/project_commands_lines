@@ -5,4 +5,4 @@ Add .env file in same level with src/:
         REACT_APP_RSS2JSON_API_KEY='key_of_rss2json_api'
         REACT_APP_GEOLOCATION_DB_API_KEY='key_of_geolocalisatiob_db_api'
         REACT_APP_CODE_MODE='local_dev'
-        NODE_ENV="developpement"
+        NODE_ENV="development"
