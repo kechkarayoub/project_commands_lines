@@ -1,0 +1,22 @@
+Tu run tests:
+    python manage test {app_name or nothing for all apps}
+Install coverage:
+    pip3 install coverage
+Coverage configuration:
+    Create .coveragerc file in project root and fill it by:[run]
+        branch = True
+        source = .
+        omit =
+            manage.py
+            remedial_teaching/settings.py
+            remedial_teaching/asgi.py
+            remedial_teaching/wsgi.py
+            And all files you want to omit
+        [report]
+        show_missing = True
+Clear reports:
+    coverage erase
+Run test:
+    coverage run manage.py  test
+Show report:
+    coverage report

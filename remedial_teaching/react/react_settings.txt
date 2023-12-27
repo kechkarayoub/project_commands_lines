@@ -1,0 +1,14 @@
+Add .env file in same level with src/:
+    Local dev environement example:
+        NODE_PATH=src/
+        REACT_APP_URL_WS=http://localhost:8000
+        REACT_APP_RSS2JSON_API_KEY='key_of_rss2json_api'
+        REACT_APP_GEOLOCATION_DB_API_KEY='key_of_geolocalisatiob_db_api'
+        REACT_APP_CODE_MODE='local_dev'
+        NODE_ENV="development"
+        REACT_APP_GOOGLE_OAUTH_CLIENT_ID='google_oauth_client_id'
+        REACT_APP_GOOGLE_OAUTH_CLIENT_SECRET='google_oauth_client_secret'
+
+if "It is likely not a bug in Create React App, but something you need to fix locally." error:
+    add this line to .env:
+        SKIP_PREFLIGHT_CHECK=true
