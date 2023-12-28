@@ -10,6 +10,9 @@ For each app:
         mkdir locale
     Create .po files:
         For each language you want, run:
-            django-admin makemessages -l {language_code} # ex: fr, en, ar
+            python ../manage.py makemessages -l {language_code} --verbosity 2 -i migrations  --settings devstack
+            # language_code: fr, en, ar / --verbosity: for showing details / -i: for ignoring files and folders / --settings for settings file.
+        If .po files not appearing in project structure and showed in unresolved files, add them by git:
+            git add {path/to/app}/locale/{language}/LC_MESSAGES/django.po
     Create .mo files by running:
         django-admin compilemessages
