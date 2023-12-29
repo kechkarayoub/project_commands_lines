@@ -15,4 +15,4 @@ For each app:
         If .po files not appearing in project structure and showed in unresolved files, add them by git:
             git add {path/to/app}/locale/{language}/LC_MESSAGES/django.po
     Create .mo files by running:
-        django-admin compilemessages
+        python manage.py compilemessages  --settings devstack
