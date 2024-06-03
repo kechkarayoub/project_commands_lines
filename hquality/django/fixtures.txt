@@ -1,0 +1,6 @@
+Create fixtures:
+    Inside each app create a folder named fixtures.
+        Inside fixtures folder, create fixtures files with names you want (ex: 01_hquality_account_type_service.yaml)
+
+Run fixtures:
+    python manage.py loaddata fine_name_without_extention # ex: python manage.py loaddata 01_hquality_account_type_service

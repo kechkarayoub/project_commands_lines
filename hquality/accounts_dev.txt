@@ -1,0 +1,9 @@
+Django admin:
+    Username: admin
+    Password: admin
+Ubuntu user:
+    Username:
+    Password:
+Google: hquality139@gmail.com/abcd
+https://geolocation-db.com/ api key is by account "hquality139@gmail.com" (not yet)
+https://www.sendgrid.com/ api key is by account "hquality139@gmail.com" (not yet)

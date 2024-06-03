@@ -1,0 +1,114 @@
+Install pip3:
+	python -m pip3 install --upgrade pip
+Install venv:
+	pip3 install virtualenv
+	python3 -m venv venv
+Activate venv:
+    venv\Scripts\activate
+Install django:
+    pip3 install django
+Create project:
+    django-admin startproject hquality_backend
+Create app:
+    python manage.py startapp app_name
+Database setup:
+    Installation packages:
+        #sudo apt install python3-dev libmysqlclient-dev default-libmysqlclient-dev
+        pip3 install pymysql
+        pip3 install mysqlclient
+        #sudo apt install mysql-client-core-8.0
+        #apt-get -s install mariadb-server
+    Create database:
+        CREATE DATABASE database_name; # ex: hquality
+        CREATE USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; # ex: User: healthkools_user, Password: password
+        FLUSH PRIVILEGES;
+        GRANT ALL ON database_name.* TO 'user'@'localhost';
+    Configuration file:
+        Create my.cnf file in hquality_backend/ with content:
+            [client]
+            database = database_name
+            host = localhost
+            user = user
+            password = password
+            default-character-set = utf8
+    Restart mysql:
+        windows key + R
+        services.msc
+        search mysql service
+        restart
+Install djangorestframework:
+    pip3 install djangorestframework
+Install requests:
+    pip3 install requests
+Install django-colorfield:
+    pip3 install django-colorfield
+    (python manage.py collectstatic)
+Install django-after-response:
+    pip3 install django-after-response==0.2.2
+Install yaml:
+    pip3 install pyyaml
+Install html2text:
+    pip3 install html2text
+Install django-cors-headers:
+    pip3 install django-cors-headers
+Install django-cors-headers:
+    pip install django-googledrive-storage
+
+Add private.py file in hquality_backend/hquality_backend/ with local settings. ex:
+    from django.utils.translation import gettext_lazy as _
+    RSS2JSON_API_KEY = '{RSS2JSON_API_KEY}'
+    LANGUAGES_DICT = {
+        "ar": _("Arabic"),
+        "en": _("English"),
+        "fr": _("French")
+    }
+
+    DEVELOPMENT_MODE = "dev"
+    # sendgrid django setting
+    SENDGRID_API_KEY = '{send_grid_api_key}'
+    EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+    EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_FROM_ADDRESS = '{sender_address}'
+    BACKEND_URL = "http://localhost:8000"
+    FRONT_URL = "http://localhost:3000"
+
+For local dev create a devstack.py file in hquality_backend/hquality_backend/ with development settings. ex:
+    from os.path import abspath, dirname, join
+    DEBUG = True
+    ALLOWED_HOSTS = ["*"]
+    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ORIGIN_WHITELIST = ["*"]
+    # google storage config
+    GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = join(dirname(abspath(__file__)), 'dev_mafatih/google_storage_configuration.json')  # path to private json key file obtained by Google.
+
+
+
+Add setfeeds.sh script:
+    create a setfeeds_ar.sh file with this content:
+        #!/bin/bash
+        source ~/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l ar
+    create a setfeeds_en.sh file with this content:
+        #!/bin/bash
+        source ~/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l en
+    create a setfeeds_fr.sh file with this content:
+        #!/bin/bash
+        source ~/.bashrc
+        source /venv/path/bin/activate
+        python /project/manage.py setfeeds --l fr
+    Make files executables:
+        chmod +x /path/to/setfeeds_ar.sh
+        chmod +x /path/to/setfeeds_en.sh
+        chmod +x /path/to/setfeeds_fr.sh
+    Add crontab:
+        crontab -e
+        Add those lines:
+            0 0 * * MON /path/to/setfeeds_ar.sh > /user/path/cronjob.log 2>&1
+            0 0 * * WED /path/to/setfeeds_en.sh > /user/path/cronjob.log 2>&1
+            0 0 * * FRI /path/to/setfeeds_fr.sh > /user/path/cronjob.log 2>&1
+        Save file
