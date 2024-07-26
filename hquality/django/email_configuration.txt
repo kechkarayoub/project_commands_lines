@@ -1,2 +1,2 @@
 Maybe nice provider:
-    www.sendgrid.com
+    www.brevo.com (kotchmeservdev@gmail.com)

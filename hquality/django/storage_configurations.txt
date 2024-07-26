@@ -1,6 +1,1 @@
-For google drive storage:
-    Generate json configuration file in https://developers.google.com/identity/protocols/oauth2/service-account?hl=fr
-    For dev:
-        Add the file in dev_mafatih directory which will be in the same place with settings.py
-    For prod:
-        Add the file in /etc/
+I use firebase.

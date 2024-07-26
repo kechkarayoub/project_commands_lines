@@ -1,0 +1,50 @@
+Install the SDK:
+    pip install sib-api-v3-sdk
+
+Obtain API Key:
+    Sign up for a Brevo account and get your API key from the Brevo dashboard.
+
+
+Create a Transactional Email Template:
+    In your Brevo account, create a transactional email template for the activation email. Make note of the template ID.
+
+Using the TransactionalEmailsApi Class:
+    Here’s an example of how to send an activation email using Brevo’s API:
+
+
+    import sib_api_v3_sdk
+    from sib_api_v3_sdk.rest import ApiException
+    from pprint import pprint
+
+    # Configure API key authorization: api-key
+    configuration = sib_api_v3_sdk.Configuration()
+    configuration.api_key['api-key'] = 'YOUR_API_KEY'
+
+    # Create an instance of the API class
+    api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+
+    # Define the email details
+    sender = {"name": "Your Company Name", "email": "your_email@example.com"}
+    to = [{"email": "user_email@example.com", "name": "User Name"}]
+    subject = "Account Activation"
+    html_content = "<html><body><h1>Activate your account</h1><p>Click <a href='activation_link'>here</a> to activate your account.</p></body></html>"
+
+    # Optionally, you can use a template instead of html_content
+    template_id = 1  # Replace with your template ID
+    params = {"activation_link": "http://example.com/activate?token=123456"}
+
+    send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
+        to=to,
+        sender=sender,
+        subject=subject,
+        html_content=html_content,  # Use this if not using a template
+        template_id=template_id,  # Use this if using a template
+        params=params  # Parameters for the template
+    )
+
+    try:
+        # Send the email
+        api_response = api_instance.send_transac_email(send_smtp_email)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionalEmailsApi->send_transac_email: %s\n" % e)

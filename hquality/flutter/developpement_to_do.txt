@@ -1,2 +1,20 @@
 - Optimise image before sending to server.
 - Add google oauth registration
+
+- Configure firebase (add api keys to .env file / generate json file because they aren't committed (android/app/google-services.json, )).
+    Ajouter GoogleService-Info.plist à votre projet Flutter:
+
+        Placez le fichier GoogleService-Info.plist dans le répertoire ios/Runner de votre projet Flutter.
+        Ouvrez le fichier ios/Runner.xcworkspace dans Xcode.
+        Faites glisser le fichier GoogleService-Info.plist dans le navigateur de projets Xcode sous Runner (assurez-vous que "Copy items if needed" est coché).
+    Ajouter GoogleService-Info.plist à votre projet macOS :
+
+        Placez le fichier GoogleService-Info.plist dans le répertoire macos/Runner de votre projet Flutter.
+        Ouvrez le fichier macos/Runner.xcworkspace dans Xcode.
+        Faites glisser le fichier GoogleService-Info.plist dans le navigateur de projets Xcode sous Runner (assurez-vous que "Copy items if needed" est coché).
+        Modifier les fichiers de configuration dans Xcode :
+
+    Ouvrez macos/Runner.xcworkspace dans Xcode.
+        Cliquez sur Runner dans le navigateur de projets.
+        Allez dans les paramètres de construction (Build Settings).
+        Recherchez la clé Info.plist File et ajoutez le chemin vers GoogleService-Info.plist.

@@ -1,2 +1,4 @@
 Generate requirement.txt:
     pip3 freeze > requirements.txt
+Test:
+    python manage.py test  --settings devstack

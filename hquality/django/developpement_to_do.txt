@@ -1,1 +1,1 @@
-- Add google oauth registration
+- Change EMAIL_FROM_ADDRESS
